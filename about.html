@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="The Indian Classics - Discover India's vintage and classic automobiles."
+  >
+
+  <title>The Indian Classics – Vintage Cars</title>
+
+  <style>
+
+    /* =========================
+       RESET
+    ========================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f8f5ef;
+      color: #333;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      background: #111;
+      color: #fff;
+
+      padding: 1rem 2rem;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 5px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+
+      padding: 0.5rem 1rem;
+
+      display: block;
+
+      transition: background 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: #c9973e;
+      border-radius: 5px;
+    }
+
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.55),
+          rgba(0, 0, 0, 0.65)
+        ),
+        url("https://wallpaperaccess.com/full/40429.jpg")
+        no-repeat center/cover;
+
+      min-height: 80vh;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      color: white;
+      text-align: center;
+
+      padding: 2rem 1rem;
+    }
+
+    .hero h2 {
+      font-size: 3.5rem;
+
+      text-shadow:
+        2px 2px 5px rgba(0, 0, 0, 0.7);
+
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      max-width: 700px;
+
+      margin-top: 1rem;
+
+      font-size: 1.2rem;
+
+      text-shadow:
+        1px 1px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-button {
+      margin-top: 2rem;
+
+      padding: 12px 25px;
+
+      background: #c9973e;
+      color: white;
+
+      text-decoration: none;
+
+      border-radius: 5px;
+
+      font-weight: bold;
+
+      transition: background 0.3s ease;
+    }
+
+    .hero-button:hover {
+      background: #a87928;
+    }
+
+
+    /* =========================
+       GENERAL SECTION
+    ========================== */
+
+    .section {
+      padding: 4rem 2rem;
+
+      max-width: 1200px;
+
+      margin: auto;
+    }
+
+    .section h3 {
+      text-align: center;
+
+      margin-bottom: 2rem;
+
+      font-size: 2rem;
+
+      color: #a87928;
+    }
+
+
+    /* =========================
+       CAR GRID
+    ========================== */
+
+    .car-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          auto-fit,
+          minmax(280px, 1fr)
+        );
+
+      gap: 2rem;
+    }
+
+    .car-item {
+      background: white;
+
+      border: 1px solid #e4ded3;
+
+      border-radius: 10px;
+
+      overflow: hidden;
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .car-item:hover {
+      transform: translateY(-8px);
+
+      box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .car-item img {
+      width: 100%;
+
+      height: 210px;
+
+      object-fit: cover;
+
+      display: block;
+    }
+
+    .car-content {
+      padding: 1.2rem;
+    }
+
+    .car-content h4 {
+      font-size: 1.4rem;
+
+      color: #222;
+
+      margin-bottom: 0.5rem;
+    }
+
+    .car-year {
+      color: #a87928;
+
+      font-weight: bold;
+
+      margin-bottom: 0.5rem;
+    }
+
+    .car-content p {
+      color: #666;
+
+      margin-bottom: 1rem;
+    }
+
+    .car-info {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 8px;
+
+      font-size: 0.9rem;
+
+      border-top: 1px solid #eee;
+
+      padding-top: 10px;
+    }
+
+    .car-info span {
+      color: #555;
+    }
+
+
+    /* =========================
+       HISTORY
+    ========================== */
+
+    .history {
+      background: #171717;
+
+      color: white;
+
+      width: 100%;
+    }
+
+    .history-inner {
+      max-width: 1200px;
+
+      margin: auto;
+
+      padding: 4rem 2rem;
+
+      text-align: center;
+    }
+
+    .history-inner h3 {
+      color: #d3a54b;
+
+      margin-bottom: 1.5rem;
+    }
+
+    .history-inner p {
+      max-width: 850px;
+
+      margin: auto;
+
+      color: #ddd;
+
+      font-size: 1.05rem;
+    }
+
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      align-items: center;
+
+      gap: 2rem;
+    }
+
+    .about img {
+      width: 100%;
+
+      max-width: 500px;
+
+      height: 330px;
+
+      object-fit: cover;
+
+      border-radius: 10px;
+    }
+
+    .about-text {
+      flex: 1;
+
+      min-width: 280px;
+    }
+
+    .about-text h3 {
+      text-align: left;
+
+      margin-bottom: 1rem;
+    }
+
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact-section {
+      background: #eee9df;
+
+      width: 100%;
+
+      max-width: none;
+    }
+
+    .contact-container {
+      max-width: 700px;
+
+      margin: auto;
+
+      background: white;
+
+      border-radius: 20px;
+
+      padding: 30px;
+
+      box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact-container h2 {
+      text-align: center;
+
+      color: #a87928;
+
+      margin-bottom: 1.5rem;
+    }
+
+    form {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 8px;
+    }
+
+    label {
+      font-weight: bold;
+
+      color: #444;
+
+      margin-top: 8px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+
+      padding: 12px;
+
+      border: 1px solid #ccc;
+
+      border-radius: 6px;
+
+      font-family: inherit;
+
+      font-size: 1rem;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+
+      border-color: #c9973e;
+
+      box-shadow:
+        0 0 0 2px rgba(201, 151, 62, 0.15);
+    }
+
+    button {
+      margin-top: 15px;
+
+      padding: 12px;
+
+      border: none;
+
+      border-radius: 6px;
+
+      background: #c9973e;
+
+      color: white;
+
+      font-size: 1rem;
+
+      font-weight: bold;
+
+      cursor: pointer;
+
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #a87928;
+    }
+
+    .contact-details {
+      text-align: center;
+
+      margin-top: 3rem;
+    }
+
+    .contact-details h3 {
+      color: #a87928;
+
+      margin-bottom: 1rem;
+    }
+
+    .contact-details p {
+      margin: 5px 0;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #111;
+
+      color: #ddd;
+
+      text-align: center;
+
+      padding: 2rem;
+    }
+
+    footer span {
+      color: #c9973e;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 700px) {
+
+      header {
+        flex-direction: column;
+
+        gap: 1rem;
+
+        padding: 1rem;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+
+        justify-content: center;
+      }
+
+      nav ul li a {
+        padding: 0.4rem 0.7rem;
+      }
+
+      .hero {
+        min-height: 70vh;
+      }
+
+      .hero h2 {
+        font-size: 2.3rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .section {
+        padding: 3rem 1rem;
+      }
+
+      .about-text h3 {
+        text-align: center;
+      }
+
+      .car-info {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-container {
+        padding: 20px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header>
+
+    <h1>The Indian Classics</h1>
+
+    <nav aria-label="Main navigation">
+
+      <ul>
+
+        <li>
+          <a href="#home">Home</a>
+        </li>
+
+        <li>
+          <a href="#cars">Cars</a>
+        </li>
+
+        <li>
+          <a href="#history">History</a>
+        </li>
+
+        <li>
+          <a href="#about">About</a>
+        </li>
+
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="hero" id="home">
+
+    <h2>India's Vintage Cars</h2>
+
+    <p>
+      Discover the legendary automobiles that shaped
+      India's roads, culture and automotive history.
+    </p>
+
+    <a href="#cars" class="hero-button">
+      Explore Classic Cars
+    </a>
+
+  </section>
+
+
+  <!-- =========================
+       CARS
+  ========================== -->
+
+  <section class="section" id="cars">
+
+    <h3>Our Classic Collection</h3>
+
+    <div class="car-grid">
+
+
+      <!-- CAR 1 -->
+
+      <article class="car-item">
+
+        <!-- IMPORTANT:
+             Put ambassador.jpg inside:
+             your-project/images/ambassador.jpg
+        -->
+
+        <img
+          src="https://static-cdn.cars24.com/prod/auto-news24-cms/cars24-blog-images/2025/11/07/fe46a5c2-0afa-4c76-8d46-b7763bf542ba-featured.webp"
+          alt="Hindustan Ambassador"
+          loading="lazy"
+        >
+
+        <div class="car-content">
+
+          <h4>Hindustan Ambassador</h4>
+
+          <div class="car-year">
+            1957 – 2014
+          </div>
+
+          <p>
+            One of India's most iconic automobiles,
+            the Ambassador became a symbol of government,
+            family travel and Indian roads.
+          </p>
+
+          <div class="car-info">
+
+            <span>
+              <strong>Maker:</strong>
+              Hindustan Motors
+            </span>
+
+            <span>
+              <strong>Type:</strong>
+              Sedan
+            </span>
+
+            <span>
+              <strong>Drive:</strong>
+              RWD
+            </span>
+
+            <span>
+              <strong>Nickname:</strong>
+              Amby
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- CAR 2 -->
+
+      <article class="car-item">
+
+        <img src="data:image/webp;base64,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" alt="Premier Padmini" >
+
+
+        <div class="car-content">
+
+          <h4>Premier Padmini</h4>
+
+          <div class="car-year">
+            1964 – 2001
+          </div>
+
+          <p>
+            A stylish Italian-inspired classic that became
+            famous as the legendary taxi of Mumbai.
+          </p>
+
+          <div class="car-info">
+
+            <span>
+              <strong>Maker:</strong>
+              Premier
+            </span>
+
+            <span>
+              <strong>Type:</strong>
+              Sedan
+            </span>
+
+            <span>
+              <strong>Engine:</strong>
+              1.1L
+            </span>
+
+            <span>
+              <strong>Drive:</strong>
+              RWD
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- CAR 3 -->
+
+      <article class="car-item">
+
+        <img
+          src="https://ic4.maxabout.us/tr:w-600/autos/cars_india/2024/11/__Standard_Herald-20241122065558.jpg"
+          alt="Standard Herald"
+          loading="lazy"
+        >
+
+        <div class="car-content">
+
+          <h4>Standard Herald</h4>
+
+          <div class="car-year">
+            1960s – 1970s
+          </div>
+
+          <p>
+            A British-inspired classic that combined
+            Triumph design with Indian automobile manufacturing.
+          </p>
+
+          <div class="car-info">
+
+            <span>
+              <strong>Maker:</strong>
+              Standard
+            </span>
+
+            <span>
+              <strong>Type:</strong>
+              Sedan
+            </span>
+
+            <span>
+              <strong>Engine:</strong>
+              948cc
+            </span>
+
+            <span>
+              <strong>Origin:</strong>
+              UK / India
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- CAR 4 -->
+
+      <article class="car-item">
+
+        <img
+          src="https://4.bp.blogspot.com/-uEsBiCZ0roE/UiDjCCl0kJI/AAAAAAAAAG4/RWseDms2pd0/s1600/landmaster+1.jpg"
+          alt="Hindustan Landmaster"
+          loading="lazy"
+        >
+
+        <div class="car-content">
+
+          <h4>Hindustan Landmaster</h4>
+
+          <div class="car-year">
+            1950s
+          </div>
+
+          <p>
+            An early Hindustan Motors sedan and an important
+            predecessor to the famous Ambassador.
+          </p>
+
+          <div class="car-info">
+
+            <span>
+              <strong>Maker:</strong>
+              Hindustan Motors
+            </span>
+
+            <span>
+              <strong>Type:</strong>
+              Sedan
+            </span>
+
+            <span>
+              <strong>Era:</strong>
+              1950s
+            </span>
+
+            <span>
+              <strong>Origin:</strong>
+              India
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- CAR 5 -->
+
+      <article class="car-item">
+
+        <img
+          src="https://tse1.mm.bing.net/th/id/OIP.BKBgJp4RZGa1LZ0V0BCVxgHaEc?r=0&w=987&h=592&rs=1&pid=ImgDetMain&o=7&rm=3"
+          loading="lazy"
+        >
+
+        <div class="car-content">
+
+          <h4>Premier 118 NE</h4>
+
+          <div class="car-year">
+            1980s – 1990s
+          </div>
+
+          <p>
+            A European-inspired Indian sedan that represented
+            the transition toward modern automobiles.
+          </p>
+
+          <div class="car-info">
+
+            <span>
+              <strong>Maker:</strong>
+              Premier
+            </span>
+
+            <span>
+              <strong>Type:</strong>
+              Sedan
+            </span>
+
+            <span>
+              <strong>Engine:</strong>
+              1.2L
+            </span>
+
+            <span>
+              <strong>Based on:</strong>
+              Fiat 124
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- CAR 6 -->
+
+      <article class="car-item">
+
+        <img
+          src="https://5.imimg.com/data5/ANDROID/Default/2023/7/330059086/IM/US/XO/181191079/product-jpeg-1000x1000.jpg"
+          alt="Mahindra CJ Jeep"
+          loading="lazy"
+        >
+
+        <div class="car-content">
+
+          <h4>Mahindra CJ Jeep</h4>
+
+          <div class="car-year">
+            From the 1940s
+          </div>
+
+          <p>
+            A rugged four-wheel-drive vehicle that became
+            famous for its durability and off-road capability.
+          </p>
+
+          <div class="car-info">
+
+            <span>
+              <strong>Maker:</strong>
+              Mahindra
+            </span>
+
+            <span>
+              <strong>Type:</strong>
+              4×4
+            </span>
+
+            <span>
+              <strong>Drive:</strong>
+              4WD
+            </span>
+
+            <span>
+              <strong>Use:</strong>
+              Utility
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- CAR 7 -->
+
+      <article class="car-item">
+
+        <img
+          src="https://www.cartoq.com/wp-content/uploads/2023/06/standard-2000-featured.jpg.webp"
+          alt="Standard 2000"
+          loading="lazy"
+        >
+
+        <div class="car-content">
+
+          <h4>Standard 2000</h4>
+
+          <div class="car-year">
+            1985 – 1987
+          </div>
+
+          <p>
+            A rare Indian luxury sedan based on the Rover SD1,
+            known for its large body and distinctive styling.
+          </p>
+
+          <div class="car-info">
+
+            <span>
+              <strong>Maker:</strong>
+              Standard
+            </span>
+
+            <span>
+              <strong>Type:</strong>
+              Luxury Sedan
+            </span>
+
+            <span>
+              <strong>Engine:</strong>
+              2.0L
+            </span>
+
+            <span>
+              <strong>Based on:</strong>
+              Rover SD1
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- CAR 8 -->
+
+      <article class="car-item">
+
+        <img
+          src="https://www.team-bhp.com/forum/attachments/modifications-accessories/35134d1692854846t-hm-contessa-upgrade-2290570505_4b05647fd8_b.jpg" alt="Classic car representing the Hindustan Contessa"
+          alt="Hindustan Contessa"
+          loading="lazy"
+        >
+
+        <div class="car-content">
+
+          <h4>Hindustan Contessa</h4>
+
+          <div class="car-year">
+            1984 – 2002
+          </div>
+
+          <p>
+            An iconic executive sedan with a long body,
+            spacious cabin and distinctive 1980s styling.
+          </p>
+
+          <div class="car-info">
+
+            <span>
+              <strong>Maker:</strong>
+              Hindustan Motors
+            </span>
+
+            <span>
+              <strong>Type:</strong>
+              Sedan
+            </span>
+
+            <span>
+              <strong>Origin:</strong>
+              India
+            </span>
+
+            <span>
+              <strong>Era:</strong>
+              1980s–90s
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- CAR 9 -->
+
+      <article class="car-item">
+
+        <img
+          src="https://route66auctions.b-cdn.net/wp-content/uploads/2025/04/fiat-124-spider-rood-1980-004-scaled.jpg"
+          alt="Premier 124"
+          loading="lazy"
+        >
+
+        <div class="car-content">
+
+          <h4>Premier 124</h4>
+
+          <div class="car-year">
+            1970s – 1980s
+          </div>
+
+          <p>
+            A classic European-influenced sedan that reflects
+            Premier's long relationship with Fiat.
+          </p>
+
+          <div class="car-info">
+
+            <span>
+              <strong>Maker:</strong>
+              Premier
+            </span>
+
+            <span>
+              <strong>Type:</strong>
+              Sedan
+            </span>
+
+            <span>
+              <strong>Based on:</strong>
+              Fiat 124
+            </span>
+
+            <span>
+              <strong>Origin:</strong>
+              India
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- CAR 10 -->
+
+      <article class="car-item">
+
+        <img
+          src="https://radical-mag.com/wp-content/uploads/2023/03/DSC_0638-e1679072759599.jpg"
+          loading="lazy"
+        >
+
+        <div class="car-content">
+
+          <h4>Fiat 1100</h4>
+
+          <div class="car-year">
+            1960s onward
+          </div>
+
+          <p>
+            An influential Italian-designed car that played
+            an important role in India's early passenger-car market.
+          </p>
+
+          <div class="car-info">
+
+            <span>
+              <strong>Maker:</strong>
+              Fiat / Premier
+            </span>
+
+            <span>
+              <strong>Type:</strong>
+              Sedan
+            </span>
+
+            <span>
+              <strong>Engine:</strong>
+              1.1L
+            </span>
+
+            <span>
+              <strong>Origin:</strong>
+              Italy / India
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       HISTORY
+  ========================== -->
+
+  <section class="history" id="history">
+
+    <div class="history-inner">
+
+      <h3>The Story of Indian Motoring</h3>
+
+      <p>
+        India's automobile history is filled with remarkable cars
+        that became part of everyday life. From the legendary
+        Hindustan Ambassador and Premier Padmini to rugged
+        Mahindra Jeeps and elegant European-inspired sedans,
+        these vehicles represent different chapters of India's
+        journey on four wheels.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ABOUT
+  ========================== -->
+
+  <section class="section about" id="about">
+
+    <img
+      src="https://shipvehicles.com/wp-content/uploads/2020/09/vintage-cars.jpg"
+      alt="Vintage classic automobile"
+      loading="lazy"
+    >
+
+    <div class="about-text">
+
+      <h3>About The Indian Classics</h3>
+
+      <p>
+        The Indian Classics is a digital collection dedicated
+        to India's vintage and classic automobiles. Our goal is
+        to preserve the stories, designs and memories associated
+        with the cars that shaped generations of Indian motorists.
+      </p>
+
+      <br>
+
+      <p>
+        Explore legendary manufacturers, discover forgotten
+        classics and learn about the automobiles that became
+        symbols of different eras in India's history.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTACT
+  ========================== -->
+
+  <section class="section contact-section" id="contact">
+
+    <div class="contact-container">
+
+      <h2>Send Us a Message</h2>
+
+      <form action="contacts.php" method="POST">
+
+        <label for="name">
+          Name
+        </label>
+
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your Name"
+          autocomplete="name"
+          required
+        >
+
+
+        <label for="email">
+          Email
+        </label>
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Your Email"
+          autocomplete="email"
+          required
+        >
+
+
+        <label for="message">
+          Message
+        </label>
+
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Your Message"
+          required
+        ></textarea>
+
+
+        <button type="submit">
+          Send Message
+        </button>
+
+      </form>
+
+    </div>
+
+
+    <!-- CONTACT DETAILS -->
+
+    <div class="contact-details">
+
+      <h3>Get in Touch</h3>
+
+      <p>
+        📍 Vintage Automobile Museum, India
+      </p>
+
+      <p>
+        📧 contact@theindianclassics.com
+      </p>
+
+      <p>
+        📞 +91 98765 43210
+      </p>
+
+      <p>
+        🕘 Open Daily: 10:00 AM – 7:00 PM
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <p>
+      © 2026
+      <span>The Indian Classics</span>.
+      Celebrating India's Automotive Heritage.
+    </p>
+
+  </footer>
+
+</body>
+
+</html>
